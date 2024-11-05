@@ -1,0 +1,85 @@
+.nav-link {
+  background-color: rgba(180, 201, 244, 0.977);
+
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+
+.bungee-spice-regular {
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+// .navbar {
+//     transition: all 0.5s ease;
+//     padding-inline: 12px;
+//     padding-top: 0 !important;
+//     padding-bottom: 0 !important;
+//     background-color: rgb(0, 0, 0);
+
+// }
+
+.navbar .navbar-brand {
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+.navbar .navbar-brand img {
+    width: 45px;
+    height: 45px;
+}
+
+.nav-item .nav-link {
+    color: whitesmoke;
+    width: fit-content !important;
+
+}
+
+button i {
+    color: orange !important;
+}
+
+
+
+.acive-link {
+    background-color: orange;
+    padding: 4px;
+    border-radius: 3px;
+    color: black !important;
+}
+
+.dropdown-item:hover {
+
+    background-color: orange !important;
+    color: black !important;
+    border-radius: 6px !important;
+}
+
+
+.custom-hr {
+    color: orange !important;
+    height: 5px !important;
+    margin-block: 2px !important;
+    width: 75%;
+    margin-inline: auto;
+
+}
+
+.btn-nav {
+
+  background-color: #3d4667 !important;
+  color: white !important;
+  overflow: hidden !important;
+
+}

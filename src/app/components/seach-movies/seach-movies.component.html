@@ -1,0 +1,81 @@
+
+<div class="container-fluid  vh-100">
+
+  <div class="row  g-3">
+
+    <h1 class="fw-bolder text-center  p-3"> <span (click)="back()" class="mx-5 rounded-circle p-2 bg-black"><i class="fa-solid fa-arrow-left fa-left-long"></i> </span> Search Movies <i class="fa-solid fa-magnifying-glass"></i></h1>
+
+    <div class="d-flex justify-content-center align-items-center">
+
+      <label for="MoviceName" class="text-dark fw-bold"> Movice Name </label>
+      <input (change)="getSeachMovies()" [(ngModel)]="serchNameMovies" id="MoviceName" type="text" class="w-25 mx-3 form-control" placeholder="SearchMovice">
+      <label for="Year" class="text-dark fw-bold"> Movice Year </label>
+      <input (change)="getSeachMovies()"  [(ngModel)]="serchYearMovies" id="Year" type="text" class=" w-25 mx-3 form-control" placeholder="SearchMovice">
+
+      <button class="btn btn-Serch">
+        Serch <i class="fa-solid fa-magnifying-glass"></i></button>
+
+    </div>
+
+    <div class="col-md-3" *ngFor="let PopMovies of Movice ">
+
+      <div class="rounded overflow-hidden">
+                              <!-- Button trigger modal -->
+      <div class="position-relative">
+        <div  type="button" class="btn bg-light rounded position-absolute Modele" data-bs-toggle="modal"
+        [attr.data-bs-target]="'#exampleModal-' + PopMovies.id">
+          <i class="fa-regular fa-eye"></i>
+        </div>
+      </div>
+        <!-- <button type="button" >
+          Launch demo modal
+        </button> -->
+        <div  class="inner-img">
+          <img class="w-100 rounded" [src]="imgPrefix + PopMovies.backdrop_path" alt="">
+          <div class="inner-h2 rounded">
+            <h2 class="text-dark h4">{{PopMovies.title.substring(0, 15)}}</h2>
+            <h3 class="text-dark h4 text-danger">{{PopMovies.original_language}}</h3>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- id="exampleModal" -->
+      <!-- Modal -->
+      <div class="modal fade" [id]="'exampleModal-' + PopMovies.id"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content bg-black">
+            <div class="modal-header">
+              <!-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> -->
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img class="w-100" [src]="imgPrefix + PopMovies.backdrop_path" alt="">
+            </div>
+
+            <div class="container">
+              <h2>{{PopMovies.title}}</h2>
+
+            </div>
+
+            <div class="modal-footer d-flex justify-content-between align-items-center">
+
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <h4>{{PopMovies.release_date}}</h4>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <h1 *ngIf="Movice.length == 0" class="text-center d-flex justify-content-center align-items-center">Search Movice Name ):</h1>
+
+  </div>
+
+
+
+
+</div>
+

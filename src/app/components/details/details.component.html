@@ -1,0 +1,41 @@
+<div>
+
+ <div class="bg-black">
+
+
+  <div class="row g-0 py-0 m-0 px-3">
+
+    <div class="col-4">
+
+     <div class="">
+
+      <img class="img_left"  [src]="imgPrefix + movieDetailsResult.poster_path" alt="">
+
+     </div>
+
+    </div>
+    <div class="col-8">
+
+      <div class="ovierFlue">
+
+        <img class="img_rigth" [src]="imgPrefix + movieDetailsResult.backdrop_path" alt="">
+        <div class="title">
+
+          <h1>{{movieDetailsResult.original_title}} <span class="text-danger">{{movieDetailsResult.original_language}}</span></h1>
+
+          <p>{{movieDetailsResult.overview}}</p>
+
+          <h4 class="text-danger">{{movieDetailsResult.release_date}}</h4>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+ </div>
+
+</div>

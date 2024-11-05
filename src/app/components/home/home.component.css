@@ -1,0 +1,77 @@
+#preview {
+  width: 100%;
+  height: 100vh;
+}
+
+.img-container img {
+  position: relative;
+}
+
+.img-prev {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
+  margin-top: 10px;
+  z-index: 99999;
+}
+
+.img-slide {
+  display: inline-block;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.active {
+  border: 2px solid #222;
+  opacity: 1;
+}
+
+.gallery .inner-img {
+  position: relative;
+}
+
+.gallery .inner-h2 {
+  position: absolute;
+  top: 70%;
+  left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #222;
+}
+/*# sourceMappingURL=home.component.css.map */
+
+/* pagntion */
+
+.my-pagination ::ng-deep .ngx-pagination .current {
+  background: orange;
+  padding: 4px 12px;
+  border-radius: 8px;
+  color: black;
+}
+
+.my-pagination ::ng-deep .ngx-pagination a {
+
+  color: white;
+  background-color: gray;
+  border-radius: 8px;
+  margin-inline: 4px;
+  text-decoration: none;
+
+}
+
+.my-pagination ::ng-deep .ngx-pagination a:hover {
+  background-color: orange;
+  color: black;
+}
+
+.my-pagination ::ng-deep .ngx-pagination .disabled {
+  color: white;
+  background-color: rgb(48, 46, 46);
+  border-radius: 8px;
+  margin-inline: 4px;
+  text-decoration: none;
+}

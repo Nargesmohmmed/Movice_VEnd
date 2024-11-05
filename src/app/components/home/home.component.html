@@ -1,0 +1,122 @@
+<section class="gallery">
+  <div class="">
+    <div class="img-container">
+      <img src="./assets/image/p_disney_wish_2993_f80fee96.jpeg" alt="" id="preview">
+      <!-- <div class="img-prev text-center"> -->
+
+
+        <owl-carousel-o [options]="customOptions" class="img-prev text-center">
+
+          <ng-container *ngFor="let Movies of trendingMovies">
+
+            <ng-template carouselSlide>
+              <div class="img-slide active">
+                <img [src]="imgPrefix + Movies.backdrop_path" [alt]="" [title]="" appSlider>
+              </div>
+            </ng-template>
+
+          </ng-container>
+
+        </owl-carousel-o>
+
+      </div>
+
+      </div>
+
+  <!-- </div> -->
+
+      <div class="container-fluid position-relative">
+
+        <div class="row mt-3 g-3">
+          <h1 class="fw-bolder">Popular Movies :</h1>
+          <div class="col-md-3" *ngFor="let PopMovies of PopularMovies |paginate
+          : {
+              id: 'moviePaginate',
+              itemsPerPage: pageSize,
+              currentPage: currentPage,
+              totalItems: total
+            }">
+
+            <div class="rounded overflow-hidden">
+                                    <!-- Button trigger modal -->
+            <div class="position-relative">
+              <div  type="button" class="btn bg-light rounded position-absolute Modele" data-bs-toggle="modal"
+              [attr.data-bs-target]="'#exampleModal-' + PopMovies.id">
+                <i class="fa-regular fa-eye"></i>
+              </div>
+            </div>
+              <!-- <button type="button" >
+                Launch demo modal
+              </button> -->
+              <div [routerLink]="['/details' , PopMovies.id]" class="inner-img">
+                <img class="w-100" [src]="imgPrefix + PopMovies.backdrop_path" alt="">
+                <div class="inner-h2 rounded">
+                  <h2 class="fw-light h4">{{PopMovies.title.substring(0, 15)}}</h2>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- id="exampleModal" -->
+            <!-- Modal -->
+            <div class="modal fade" [id]="'exampleModal-' + PopMovies.id"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content bg-black">
+                  <div class="modal-header">
+                    <!-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <img class="w-100" [src]="imgPrefix + PopMovies.backdrop_path" alt="">
+                  </div>
+
+                  <div class="container">
+                    <h2>{{PopMovies.title}}</h2>
+
+                  </div>
+
+                  <div class="modal-footer d-flex justify-content-between align-items-center">
+
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <h4>{{PopMovies.release_date}}</h4>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+        <!-- // pages -->
+        <div class="text-center mt-4">
+          <!-- <h1>any</h1> -->
+          <pagination-controls
+            class="my-pagination"
+            id="moviePaginate"
+            (pageChange)="pageChanged($event)"
+            (pageBoundsCorrection)="pageChanged($event)"
+            [maxSize]="9"
+            [directionLinks]="true"
+            [autoHide]="true"
+            [responsive]="true"
+            previousLabel="Previous"
+            nextLabel="Next"
+            screenReaderPaginationLabel="Pagination"
+            screenReaderPageLabel="page"
+            screenReaderCurrentLabel="You're on page"
+          >
+          </pagination-controls>
+        </div>
+
+
+      </div>
+
+
+
+</section>
+
+
